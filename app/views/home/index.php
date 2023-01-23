@@ -1,3 +1,3 @@
 <div class="container">
-  <h1>Selamat Datang di Website Saya</h1>
+  <h1>Hello I'm <?= $data['nama'] ?></h1>
 </div>

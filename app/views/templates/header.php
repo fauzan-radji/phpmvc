@@ -21,6 +21,7 @@
         <div class="navbar-nav">
           <a class="nav-link" href="<?= BASEURL ?>">Home</a>
           <a class="nav-link" href="<?= BASEURL ?>/about">About</a>
+          <a class="nav-link" href="<?= BASEURL ?>/mahasiswa">Mahasiswa</a>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <?php
 class App
 {
-  private $controller = 'Home';
+  private $controller = 'HomeController';
   private $method = 'index';
   private $params = [];
 
@@ -10,8 +10,8 @@ class App
     $url = $this->parseURL();
 
     if (isset($url)) {
-      if (file_exists('../app/controllers/' . ucfirst($url[0]) . '.php')) {
-        $this->controller = ucfirst($url[0]);
+      if (file_exists('../app/controllers/' . ucfirst($url[0]) . 'Controller.php')) {
+        $this->controller = ucfirst($url[0]) . 'Controller';
         unset($url[0]);
       }
     }
