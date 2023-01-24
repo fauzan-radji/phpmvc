@@ -12,9 +12,7 @@
           <tr>
             <th>#</th>
             <th>Nama</th>
-            <th>NIM</th>
-            <th>Jurusan</th>
-            <th>Email</th>
+            <th>Aksi</th>
           </tr>
         </thead>
 
@@ -26,9 +24,7 @@
             <tr>
               <td><?= $no ?></td>
               <td><?= $mhs['nama'] ?></td>
-              <td><?= $mhs['nim'] ?></td>
-              <td><?= $mhs['jurusan'] ?></td>
-              <td><?= $mhs['email'] ?></td>
+              <td><a href="<?= BASEURL ?>/mahasiswa/detail/<?= $mhs['id'] ?>" class="badge bg-info text-decoration-none">Detail</a></td>
             </tr>
           <?php
             $no++;

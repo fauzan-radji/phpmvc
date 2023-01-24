@@ -1,35 +1,24 @@
 <?php
 class Mahasiswa
 {
-  private $mhs = [
-    [
-      'nama' => 'Fauzan Radji',
-      'nim' => '531421099',
-      'email' => 'fauzanradji@gmail.com',
-      'jurusan' => 'Teknik Informatika'
-    ],
-    [
-      'nama' => 'Sigit Rendang',
-      'nim' => '531421065',
-      'email' => 'sigitrendang@gmail.com',
-      'jurusan' => 'Teknik Industri'
-    ],
-    [
-      'nama' => 'Reza Kecap',
-      'nim' => '531421034',
-      'email' => 'reza_kecap@gmail.com',
-      'jurusan' => 'Teknik Elektro'
-    ],
-    [
-      'nama' => 'Roger Sumatera',
-      'nim' => '531421093',
-      'email' => 'roger@gmail.com',
-      'jurusan' => 'Teknik Arsitektur'
-    ]
-  ];
+  private $table = 'mahasiswa';
+  private $db;
+
+  public function __construct()
+  {
+    $this->db = new Database;
+  }
 
   public function getAll()
   {
-    return $this->mhs;
+    $this->db->query("SELECT * FROM $this->table");
+    return $this->db->resultSet();
+  }
+
+  public function find($id)
+  {
+    $this->db->query("SELECT * FROM $this->table WHERE id = :id");
+    $this->db->bind('id', $id);
+    return $this->db->single();
   }
 }
